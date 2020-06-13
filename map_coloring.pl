@@ -56,8 +56,13 @@ solve(NumColors, R) :-
   % display(['#', R]),
   maplist(check(R), Nodes).
 
-solve_print(NumColors) :-
+solve(NumColors) :-
   setof(X, solve(NumColors, X), R),
   length(R, L),
-  write('# Soluciones: '), writeln(L),
+  display(['# Soluciones:', L, '; Cant. colores:', NumColors]),
   maplist(writeln, R).
+
+solve :-
+  NumColors in 1..10,
+  labeling([], [NumColors]),
+  solve(NumColors).
