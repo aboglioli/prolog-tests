@@ -71,10 +71,10 @@ sudoku(Rows, Heuristic) :-
   % Tercera regla: comprueba que cada bloque de 3x3 sea distintos
   blocks(A, B, C), blocks(D, E, F), blocks(G, H, I), % primeras 3 filas, siguientes 3 filas y últimas 3 filas se pasan. Movimiento vertical.
   % Cuarta regla: diagonales con valores distintos.
-  diagonal1(Rows, D1),
-  all_distinct(D1),
-  diagonal2(Rows, D2),
-  all_distinct(D2),
+  % diagonal1(Rows, D1),
+  % all_distinct(D1),
+  % diagonal2(Rows, D2),
+  % all_distinct(D2),
   % Heurística: estrategia de selección y asignación de variables.
   flatten(Rows, Vs),
   labeling(Heuristic, Vs). % 
